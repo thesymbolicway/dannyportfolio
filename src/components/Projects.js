@@ -8,30 +8,54 @@ import projImg3 from "../assets/img/project-img3.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export const Projects = () => {
   const resumeUrl = 'https://docs.google.com/document/d/1LS9nhzTaA_DV9Sg905qYl-KyK5OFQ-cz62muvCJnBP4/edit?usp=sharing'
   const michelleTannerImage = "https://media.tenor.com/_5CCmSzS3x0AAAAC/full-house-michelle-tanner.gif"
-  const projects = [
-    {
-      title: "The Passport Bros",
-      description: "Rails and React Travel App",
-      imgUrl: projImg1,
-      url: "https://www.youtube.com/watch?v=ZK07gk3bSJc"  // Add this property
-    },
+
+  const badges = [
+    <span className="badge" style={{ backgroundColor: "red" }}>Ruby on Rails</span>,
+    <span className="badge" style={{ backgroundColor: "blue" }}>React</span>,
+    <span className="badge" style={{ backgroundColor: "purple" }}>Bootstrap</span>,
+    <span className="badge" style={{ backgroundColor: "orange" }}>Socket.io</span>
+  ];
+
+
+
+  const projects = [  {    title: "The Passport Bros",    
+  description: "A traveling app for the PassportBro movement",    
+  imgUrl: projImg1,    
+  url: "https://www.youtube.com/watch?v=ZK07gk3bSJc",    
+  caption: "Ruby on Rails, React, MapBox GL, Bootstrap, Socket.io",    
+  badges: [      { label: "Ruby on Rails", color: "red" },      
+  { label: "React", color: "blue" },      { label: "MapBox GL", color: "green" },      
+  { label: "Bootstrap", color: "purple" },      
+  { label: "Socket.io", color: "orange" }    ],
+  repoUrl: "https://github.com/thesymbolicway/passportbros"
+},
     {
       title: "WeSearch",
-      description: "An Activity Search engine",
+      description: "Find the best spots in Atlanta with WeSearch - your go-to source for reliable reviews and recommendations",
       imgUrl: projImg2,
-      url: "https://www.youtube.com/watch?v=UCZtJC2cvi4"  // Add this property
+      url: "https://www.youtube.com/watch?v=UCZtJC2cvi4",
+      caption: "Framer Motion, React Typical, Light & Dark Mode",
+      badges: [      { label: "Framer Motion", color: "red" },
+      { label: "React", color: "purple" }, { label: "React Typical", color: "green" },      
+  { label: "Light & Dark Mode", color: "purple" } ],
+      repoUrl: "https://github.com/thesymbolicway/WESearch"
     },
     {
       title: "PodPenguin",
-      description: "A Preview of the PodPenguin Project",
+      description: "A Preview of the PodPenguin project",
       imgUrl: projImg3,
-      url: "https://www.youtube.com/watch?v=O3bIQt9SYHc"  // Add this property
-    },
-  
+      url: "https://www.youtube.com/watch?v=O3bIQt9SYHc",
+      caption: "Bootstrap, PodcastAPI",
+      badges: [      { label: "PodcastAPI", color: "red" },            
+                     { label: "Bootstrap", color: "purple" }   ],
+      repoUrl: "https://github.com/thesymbolicway/podpenguin"
+    }
   ];
 
   return (
@@ -50,7 +74,7 @@ export const Projects = () => {
                       <Nav.Link eventKey="first">Projects</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="second">Shoot me a message</Nav.Link>
+                      <Nav.Link eventKey="second">Message</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                       <Nav.Link eventKey="third">Resume</Nav.Link>
@@ -60,17 +84,15 @@ export const Projects = () => {
                     <Tab.Pane eventKey="first">
                       <Row>
                       {projects.map((project, index) => {
+                        console.log(project.badges)
   return (
     <ProjectCard
       key={index}
       {...project}
+      badges={badges}
+      
     >
-      <Button
-        variant="link"
-        href={project.url}  // Add this attribute
-      >
-        {project.title}
-      </Button>
+      
     </ProjectCard>
   )
 })}

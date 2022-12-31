@@ -13,7 +13,7 @@ export const Footer = () => {
  
           <Col size={12} sm={6}>
           <a href="https://danielarisa.com">
-  <img src={logo} alt="Logo" />
+  <img className="footerimage"src={logo} alt="Logo" />
 </a>
           </Col>
           <Col size={12} sm={6} className="text-center text-sm-end">

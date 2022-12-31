@@ -11,3 +11,70 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.skill-bx {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-box {
+  width: 200px;
+  height: 200px;
+  box-shadow: 16px 14px 20px #0000008c;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 250px
+}
+
+.skill-box::before {
+  content: "";
+  background-image: conic-gradient(#b700ff 20deg, transparent 120deg);
+  width: 150%;
+  height: 150%;
+  position: absolute;
+  animation: rotate 2s linear infinite;
+  z-index: -1;
+}
+
+.skill-box::after {
+  content: "";
+  width: 190px;
+  height: 190px;
+  background: #101010;
+  position: absolute;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e418e0;
+  font-size: 48px;
+  font-weight: 700;
+  z-index: -1;
+}
+
+
+.skill-box .skill-title {
+  color: #b700ff;
+  font-size: larger;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@media (max-width: 500px) {
+  .btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
