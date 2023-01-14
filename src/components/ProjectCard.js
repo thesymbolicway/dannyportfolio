@@ -1,9 +1,9 @@
 import { Col, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faJs } from "@fortawesome/free-brands-svg-icons";
 import { badgen } from 'badgen';
 
-export const ProjectCard = ({ title, description, imgUrl, url, repoUrl, captions, badges }) => {
+export const ProjectCard = ({ title, description, imgUrl, url, repoUrl, captions, badges, demoUrl}) => {
   const handleClick = () => {
     window.location.href = url;
   };
@@ -22,9 +22,13 @@ console.log(badges)
             {badges}
           </div>
           <Button variant="link" href={repoUrl}>
-            {/* Visit Project */}
-            <FontAwesomeIcon icon={faGithub} /> Visit Project
-          </Button>
+  <FontAwesomeIcon icon={faGithub} /> Visit Project
+</Button>
+{demoUrl && (
+  <Button variant="link" href={demoUrl}>
+    <FontAwesomeIcon icon={faJs} /> Visit App
+  </Button>
+)}
         </div>
       </div>
     </Col>

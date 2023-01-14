@@ -5,11 +5,14 @@ import projImg1 from "../assets/img/project-img1.png";
 import resume from "../assets/img/resume.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import projImg4 from "../assets/img/project-img4.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faGit } from '@fortawesome/free-brands-svg-icons';
+
 
 export const Projects = () => {
   const resumeUrl = 'https://docs.google.com/document/d/1LS9nhzTaA_DV9Sg905qYl-KyK5OFQ-cz62muvCJnBP4/edit?usp=sharing'
@@ -27,7 +30,8 @@ export const Projects = () => {
   const projects = [  {    title: "The Passport Bros",    
   description: "A traveling app for the PassportBro movement",    
   imgUrl: projImg1,    
-  url: "https://www.youtube.com/watch?v=ZK07gk3bSJc",    
+  url: "https://www.youtube.com/watch?v=sXRjgWNIUuc&t=12s",
+  demoUrl: "https://passportbros.netlify.app/",    
   caption: "Ruby on Rails, React, MapBox GL, Bootstrap, Socket.io",    
   badges: [      { label: "Ruby on Rails", color: "red" },      
   { label: "React", color: "blue" },      { label: "MapBox GL", color: "green" },      
@@ -39,7 +43,8 @@ export const Projects = () => {
       title: "WeSearch",
       description: "Find the best spots in Atlanta with WeSearch - your go-to source for reliable reviews and recommendations",
       imgUrl: projImg2,
-      url: "https://www.youtube.com/watch?v=UCZtJC2cvi4",
+      url: "https://www.youtube.com/watch?v=c907ZSp9qFo",
+      demoUrl: "https://wesearchapp.netlify.app/",
       caption: "Framer Motion, React Typical, Light & Dark Mode",
       badges: [      { label: "Framer Motion", color: "red" },
       { label: "React", color: "purple" }, { label: "React Typical", color: "green" },      
@@ -55,6 +60,21 @@ export const Projects = () => {
       badges: [      { label: "PodcastAPI", color: "red" },            
                      { label: "Bootstrap", color: "purple" }   ],
       repoUrl: "https://github.com/thesymbolicway/podpenguin"
+    },
+    // new project
+    {
+      title: "DomIfy",
+      description: "DomIfy your music with personalized playlists, powered by the Spotify API",
+      imgUrl: projImg4,
+      url: "https://www.youtube.com/watch?v=tT8E4xLshMk",
+      caption: "Bootstrap, Stack",
+      badges: [
+        { label: "JavaScript", color: "yellow" },
+        { label: "HTML", color: "orange" },
+        { label: "CSS", color: "lightblue" },
+        { label: "User-friendly interface", color: "green" }
+      ],
+      repoUrl: "https://github.com/thesymbolicway/DomIfy-main"
     }
   ];
 
